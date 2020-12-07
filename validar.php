@@ -1,5 +1,7 @@
 <?php
+
 include "db/conexion.php";
+
 if (session_status() != 2) {session_start();}
 $query = "SELECT count(*) as total, id, concat(nombre,' ',apaterno,' ',amaterno) as nombre FROM usuario WHERE usuario='".$_REQUEST['Usuario']."' and password='".$_REQUEST['Contrasena']."'";
 $usuario = mysql_fetch_array(mysql_query($query,$conn));
